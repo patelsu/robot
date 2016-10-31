@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * Created by sujan on 31/10/2016.
  */
-public class RobotTest {
+public class RobotTest extends TestSetUp{
 
     @Test(expected = IllegalArgumentException.class)
     public void creatingRobotWithInvalidSizeFails()
@@ -96,13 +96,5 @@ public class RobotTest {
         robot.getDirection();
     }
 
-    private Robot getUninitializedRobot(){
-        return new Robot(5,5);
-    }
-    private Robot getInitializedRobot(){
-        Robot robot = new Robot(5,5);
-        Location location = new Location(0,0);
-        robot.initialize(Direction.DirectionEnum.EAST , location);
-        return robot;
-    }
+
 }

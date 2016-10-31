@@ -1,38 +1,44 @@
 package com.rea.codeexam.robot;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 
 /**
- * Unit test for simple App.
+ * Unit test for App Class.
  */
-public class AppTest 
-    extends TestCase
+public class AppTest
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+   @Test
+   public void testInvalidInstructions(){
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+       App app = new App();
+       Command command =  app.processInstruction("INVALID");
+       assertNull(command);
+       command = app.processInstruction("PLACE 0,2");
+       assertNull(command);
+       command = app.processInstruction("PLACE 0,2 NORTH");
+       assertNull(command);
+       command = app.processInstruction("MOV");
+       assertNull(command);
+   }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+
+   @Test
+   public void testValidInstructions(){
+       App app = new App();
+       Command command =  app.processInstruction("MOVE");
+       assertNotNull(command);
+       command = app.processInstruction("MOVE 0,2");
+       assertNotNull(command);
+       command = app.processInstruction("PLACE 0,2, NORTH");
+       assertNotNull(command);
+       command = app.processInstruction("REPORT");
+       assertNotNull(command);
+       command = app.processInstruction("RIGHT");
+       assertNotNull(command);
+       command = app.processInstruction("LEFT");
+       assertNotNull(command);
+   }
 }

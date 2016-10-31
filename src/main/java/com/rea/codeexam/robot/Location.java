@@ -41,10 +41,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Location{" +
-                "xAxis=" + xAxis +
-                ", yAxis=" + yAxis +
-                '}';
+        return xAxis + "," + yAxis;
     }
 
     @Override

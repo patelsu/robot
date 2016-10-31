@@ -11,11 +11,11 @@ public class Direction {
     {
         NORTH, EAST, SOUTH, WEST;
         private static DirectionEnum[] vals = values();
-        public DirectionEnum turnLeft()
+        public DirectionEnum turnRight()
         {
             return vals[(this.ordinal() + 1) % vals.length];
         }
-        public DirectionEnum turnRight()
+        public DirectionEnum turnLeft()
         {
             int idx = this.ordinal() - 1 % vals.length;
             if (idx < 0)

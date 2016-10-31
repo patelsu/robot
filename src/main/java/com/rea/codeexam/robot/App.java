@@ -36,7 +36,7 @@ public class App {
 
                 while (true) {
 
-                    System.out.print("Enter Command: ");
+                 //   System.out.print("Enter Command: ");
 
                     String input = br.readLine();
 
@@ -46,7 +46,8 @@ public class App {
                     }
 
                  //   System.out.println("input : " + input);
-                    app.processInstruction(input);
+                    Command command = app.processInstruction(input);
+                    command.execute();
                 }
 
             } catch (IOException e) {
@@ -67,7 +68,7 @@ public class App {
     }
 
 
-    public void processInstruction(String doit) {
+    public Command processInstruction(String doit) {
         String inst = doit.trim();
         int idx = inst.indexOf(' ');
         if (idx > 0) {
@@ -94,9 +95,7 @@ public class App {
                 command = new ReportCommand(robot);
             }
         }
-        if(command != null)
-        {
-            command.execute();
-        }
+        return command;
+
     }
 }

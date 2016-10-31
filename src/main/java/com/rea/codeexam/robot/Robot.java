@@ -96,9 +96,6 @@ public class Robot {
 
     @Override
     public String toString() {
-        return "Robot{" +
-                 location +
-                ", direction=" + direction +
-                '}';
+        return location + "," + direction ;
     }
 }
