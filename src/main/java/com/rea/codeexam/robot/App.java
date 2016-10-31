@@ -4,10 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Hello world!
- *
- */
+
 public class App {
     Robot robot = new Robot(5, 5);
 
@@ -69,9 +66,14 @@ public class App {
 
     }
 
-
-    public Command processInstruction(String doit) {
-        String inst = doit.trim();
+    /**
+     * This function parse commandStr entered to generate commands that can be executed
+     * on robot
+     * @param commandStr
+     * @return
+     */
+    public Command processInstruction(String commandStr) {
+        String inst = commandStr.trim();
         int idx = inst.indexOf(' ');
         if (idx > 0) {
             inst = inst.substring(0, idx);
@@ -80,7 +82,7 @@ public class App {
         Command command = null;
         if (inst.length() > 0) {
             if (inst.trim().equalsIgnoreCase(Commands.PLACE.toString()) && idx > 0) {
-                String params = doit.trim().substring(idx);
+                String params = commandStr.trim().substring(idx);
                 if (params != null && params.length() > 0) {
                     String[] paramVals = params.split(",");
                     if (paramVals.length > 0 && paramVals.length >= 3) {

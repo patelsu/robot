@@ -5,8 +5,7 @@ package com.rea.codeexam.robot;
  */
 
 public class Location {
-   // static final int BOARDLOWLIMIT = 0;
-  //  static final int BOARDHIGHLIMIT = 4;
+
 
     private int xAxis = -1;
     private int yAxis = -1;
