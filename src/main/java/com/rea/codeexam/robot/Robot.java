@@ -27,14 +27,14 @@ public class Robot {
       if(direction != null && isValidLocation(location)){
           this.direction = direction;
           this.location = location;
-          System.out.println(this);
+        //  System.out.println(this);
       }
   }
 
   public boolean setLocation(Location location) {
         if (initialized() && isValidLocation(location)) {
             this.location = location;
-            System.out.println(this);
+          //  System.out.println(this);
             return true;
         }
         return false;
@@ -45,7 +45,7 @@ public class Robot {
 
       if(initialized() && direction != null){
           this.direction = direction;
-          System.out.println(this);
+       //   System.out.println(this);
           return true;
       }
       return false;

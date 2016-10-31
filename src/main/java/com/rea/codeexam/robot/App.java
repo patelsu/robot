@@ -39,15 +39,17 @@ public class App {
                  //   System.out.print("Enter Command: ");
 
                     String input = br.readLine();
+                    if(input != null) {
+                        if ("q".equals(input)) {
+                            System.out.println("Exit!");
+                            System.exit(0);
+                        }
 
-                    if ("q".equals(input)) {
-                        System.out.println("Exit!");
-                        System.exit(0);
+                        //   System.out.println("input : " + input);
+                        Command command = app.processInstruction(input);
+                        if(command != null)
+                          command.execute();
                     }
-
-                 //   System.out.println("input : " + input);
-                    Command command = app.processInstruction(input);
-                    command.execute();
                 }
 
             } catch (IOException e) {
