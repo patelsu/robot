@@ -1,7 +1,7 @@
 Toy Robot Simulator
 ===================
 
-Instruction to execute programme
+Instruction to execute program
 ---------------------------------
 
 This project implements Toy robot simulator.
