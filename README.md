@@ -16,6 +16,13 @@ It will create a executable jar in targe folder. Run following command to execut
 
 A jar is also checked into the target folder to run without compiling the project.
 
+Command that do not require parameter are not validated for parameter supplied.
+
+    MOVE 123
+    RIGHT SPACE
+    LEFT 2
+    
+are valid commands as the parameters supplied are ignored.
 
 Description
 -----------
